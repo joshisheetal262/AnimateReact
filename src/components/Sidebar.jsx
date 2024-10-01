@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,18 +15,18 @@ const Sidebar = () => {
         {/* Sidebar Content */}
         <div className="flex flex-col space-y-4">
           <h2 className="text-2xl font-bold mb-6">Menu</h2>
-          <a href="#" className="hover:bg-[#7A1CAC] p-2 rounded-md">
+          <Link to="/Navbar" className="hover:bg-[#7A1CAC] p-2 rounded-md">
             Navbar
-          </a>
-          <a href="#" className="hover:bg-[#7A1CAC] p-2 rounded-md">
+          </Link>
+          <Link to="/Cards" className="hover:bg-[#7A1CAC] p-2 rounded-md">
             Cards
-          </a>
-          <a href="#" className="hover:bg-[#7A1CAC] p-2 rounded-md">
+          </Link>
+          <Link to="/Buttons" className="hover:bg-[#7A1CAC] p-2 rounded-md">
             Buttons
-          </a>
-          <a href="#" className="hover:bg-[#7A1CAC] p-2 rounded-md">
+          </Link>
+          <Link to="/Forms" className="hover:bg-[#7A1CAC] p-2 rounded-md">
             Forms
-          </a>
+          </Link>
         </div>
       </div>
 
