@@ -3,7 +3,7 @@ import { FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bottom-0 bg-[#2E073F] text-[#EBD3F8] p-6 mt-6 w-screen">
+    <footer className="bottom-0 bg-[#2E073F] text-[#EBD3F8] p-6 w-screen">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center space-y-6 md:space-y-0">
         {/* Logo and Company Introduction */}
         <div className="flex flex-col md:flex-row items-start md:items-center">

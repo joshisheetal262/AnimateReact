@@ -7,7 +7,7 @@ const Sidebar = () => {
     <div>
       {/* Sidebar */}
       <div
-        className={`inline-block top-15 left-0 h-screen bg-[#2E073F] text-white w-44 p-6 transition-transform duration-300 transform ${
+        className={`h-screen bg-[#2E073F] text-white w-48 p-6 pt-16  transition-transform duration-300 transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0`}
       >

@@ -59,7 +59,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="w-90 container mx-auto py-8">
+    <div className="p-8 container mx-auto py-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {cards.map((card, index) => (
           <Card
