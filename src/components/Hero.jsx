@@ -1,75 +1,83 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-// Card Component
-const Card = ({ imageUrl, title, description }) => {
-  return (
-    <div className="bg-gradient-to-b from-green-400 via-purple-500 to-pink-500 rounded-lg shadow-lg overflow-hidden">
-      <img src={imageUrl} alt={title} className="w-full h-40 object-cover" />
-      <div className="p-4">
-        <h3 className="text-white text-xl font-bold mb-2">{title}</h3>
-        <p className="text-white">{description}</p>
-      </div>
-    </div>
-  );
+// Typing animation variants for the entire block
+const containerVariants = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05, // Delay between each letter
+    },
+  },
 };
 
-// CardRow Component that uses the Card component
+// Typing animation for individual letters
+const letterEffect = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
 const Hero = () => {
-  const cards = [
-    {
-      imageUrl: "https://via.placeholder.com/300x200",
-      title: "Card 1",
-      description: "This is a colorful card.",
-    },
-    {
-      imageUrl: "https://via.placeholder.com/300x200",
-      title: "Card 2",
-      description: "This is another colorful card.",
-    },
-    {
-      imageUrl: "https://via.placeholder.com/300x200",
-      title: "Card 3",
-      description: "Colorful cards with Tailwind CSS.",
-    },
-    {
-      imageUrl: "https://via.placeholder.com/300x200",
-      title: "Card 4",
-      description: "Responsive and bright layout.",
-    },
-    {
-      imageUrl: "https://via.placeholder.com/300x200",
-      title: "Card 5",
-      description: "Responsive and bright layout.",
-    },
-    {
-      imageUrl: "https://via.placeholder.com/300x200",
-      title: "Card 6",
-      description: "Responsive and bright layout.",
-    },
-    {
-      imageUrl: "https://via.placeholder.com/300x200",
-      title: "Card 7",
-      description: "Responsive and bright layout.",
-    },
-    {
-      imageUrl: "https://via.placeholder.com/300x200",
-      title: "Card 8",
-      description: "Responsive and bright layout.",
-    },
-  ];
+  const titleLine1 = "AnimateReact";
+  const titleLine2 = "Addictive, Interactive UI Components";
+  const subtitle =
+    "Instantly Integrate Animated, Responsive UI Elements with React, Tailwind CSS, and Framer Motion—Just Copy & Paste in Two Clicks";
 
   return (
-    <div className="p-8 container mx-auto py-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {cards.map((card, index) => (
-          <Card
-            key={index}
-            imageUrl={card.imageUrl}
-            title={card.title}
-            description={card.description}
-          />
-        ))}
-      </div>
+    <div className="h-screen flex flex-col justify-center items-center p-4">
+      <motion.div
+        className="text-black text-center"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        transition={{
+          repeat: Infinity, // Infinite repeat
+          repeatType: "loop", // Restart the animation from the beginning
+          delayChildren: 3, // Delay before the typing restarts
+          Delay: 1,
+          ease: "linear", // Delay between loops
+        }}
+      >
+        {/* First Line of Title (AnimateReact) */}
+        <motion.h1 className="text-4xl md:text-6xl font-bold mb-4">
+          {Array.from(titleLine1).map((letter, index) => (
+            <motion.span
+              key={index}
+              variants={letterEffect}
+              transition={{ duration: 0.05 }}
+            >
+              {letter === " " ? "\u00A0" : letter}
+            </motion.span>
+          ))}
+        </motion.h1>
+
+        {/* Line Break and Second Line of Title */}
+        <motion.h1 className="text-4xl md:text-6xl font-bold mb-4">
+          {Array.from(titleLine2).map((letter, index) => (
+            <motion.span
+              key={index}
+              variants={letterEffect}
+              transition={{ duration: 0.05 }}
+            >
+              {letter === " " ? "\u00A0" : letter}
+            </motion.span>
+          ))}
+        </motion.h1>
+
+        {/* Subtitle Typing Animation */}
+        <motion.h2 className="text-lg md:text-2xl text-black">
+          {Array.from(subtitle).map((letter, index) => (
+            <motion.span
+              key={index}
+              variants={letterEffect}
+              transition={{ duration: 0.05 }}
+            >
+              {letter === " " ? "\u00A0" : letter}
+            </motion.span>
+          ))}
+        </motion.h2>
+      </motion.div>
     </div>
   );
 };

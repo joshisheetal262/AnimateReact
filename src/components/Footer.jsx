@@ -1,36 +1,117 @@
 import React from "react";
-import { FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import logo from "../images/logo.png";
+import { Link } from "react-router-dom";
+import react from "../images/react.png";
+import framerMotion from "../images/framerMotion.png";
+import tailwind from "../images/tailwind.png";
 
 const Footer = () => {
   return (
-    <footer className="bottom-0 bg-[#2E073F] text-[#EBD3F8] p-6 w-screen">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center space-y-6 md:space-y-0">
-        {/* Logo and Company Introduction */}
-        <div className="flex flex-col md:flex-row items-start md:items-center">
-          <div className="text-[#EBD3F8] text-2xl font-bold mb-2 md:mb-0 md:mr-4">
-            MyLogo
+    <footer className="bg-[#1E1E1E] text-[#E0E0E0] p-4">
+      <div className="container mx-auto flex justify-around ">
+        {/* RIGHTS-RESERVED */}
+        <div className="flex flex-row items-center ">
+          <img className="h-16 w-auto m-4" src={logo} alt="logo" />
+          {/* Copyright */}
+          <div className="text-base text-gray-400">
+            <p className="text-white">Designed by Sheetal Joshi</p>
+            <p>© 2024 Sheetal Joshi. All rights reserved.</p>
           </div>
-          <p className="text-[#EBD3F8]">
-            We are a leading company providing top-notch web solutions for all
-            your business needs.
-          </p>
         </div>
 
-        {/* Copyright */}
-        <div className="text-center md:text-left">
-          <p>© 2024 Sheetal Joshi. All rights reserved.</p>
-          <p>Designed by Sheetal Joshi</p>
-        </div>
-
-        {/* Email Contact */}
-        <div className="flex items-center space-x-2">
-          <FaEnvelope className="text-[#AD49E1]" size={24} />
+        {/* Social Icons */}
+        <div className="flex flex-col text-sm space-y-4 m-2">
+          <h1 className="ml-2 text-base font-bold">Socials</h1>
           <a
-            href="mailto:info@company.com"
-            className="text-[#EBD3F8] hover:underline"
+            className="flex items-center" // Add items-center to align vertically
+            href="mailto:sheetaljoshi262@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            info@company.com
+            <FaEnvelope
+              className="mx-2 text-[#FFFFFF] hover:text-[#03DAC6] "
+              size={18}
+            />
+            <span className="text-white hover:text-[#03DAC6]">Email</span>
           </a>
+
+          <a
+            className="flex items-center" // Add items-center to align vertically
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin
+              className="mx-2 text-[#FFFFFF] hover:text-[#03DAC6]"
+              size={18}
+            />
+            <span className="text-white hover:text-[#03DAC6]">LinkedIn</span>
+          </a>
+
+          <a
+            className="flex items-center" // Add items-center to align vertically
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub
+              className="mx-2 text-[#FFFFFF] hover:text-[#03DAC6]"
+              size={18}
+            />
+            <span className="text-white hover:text-[#03DAC6]">GitHub</span>
+          </a>
+        </div>
+
+        {/* SITES */}
+        <div className="flex flex-col text-sm space-y-4 m-2">
+          <h1 className="text-base font-bold">Sites</h1>
+          <Link
+            to="/"
+            target="_blank"
+            className="text-white hover:text-[#03DAC6]"
+          >
+            Home
+          </Link>
+          <Link
+            to="/App"
+            target="_blank"
+            className="text-white hover:text-[#03DAC6]"
+          >
+            Components
+          </Link>
+          <Link to="/App" className="text-white hover:text-[#03DAC6]">
+            About Me
+          </Link>
+        </div>
+
+        {/* TEXT  */}
+
+        <div className="w-[30rem] h-auto flex text-base m-2 items-center">
+          <p>
+            This project is a{" "}
+            <span>
+              <img
+                className="inline mx-1 h-5 w-auto"
+                src={react}
+                alt="React logo"
+              />
+              React styling library using{" "}
+              <img
+                className="inline mx-1 h-4 w-auto"
+                src={framerMotion}
+                alt="Framer Motion logo"
+              />
+              Tailwind CSS and{" "}
+              <img
+                className="inline mx-1 h-3 w-auto"
+                src={tailwind}
+                alt="Tailwind logo"
+              />
+              Framer Motion, enabling easy creation of responsive and animated
+              user interfaces.
+            </span>
+          </p>
         </div>
       </div>
     </footer>

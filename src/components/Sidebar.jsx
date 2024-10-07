@@ -1,42 +1,89 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <div>
       {/* Sidebar */}
-      <div
-        className={`h-screen bg-[#2E073F] text-white w-48 p-6 pt-16  transition-transform duration-300 transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } md:translate-x-0`}
-      >
+      <div className="h-screen bg-white text-[#272727] w-[13rem] p-6 pt-8 overflow-y-scroll">
         {/* Sidebar Content */}
         <div className="flex flex-col space-y-4">
-          <h2 className="text-2xl font-bold mb-6">Menu</h2>
-          <Link to="/Navbar" className="hover:bg-[#7A1CAC] p-2 rounded-md">
+          <span className="text-2xl font-bold mr-4">Components</span>
+
+          <Link
+            to="/Navbar"
+            className="hover:bg-[#03DAC6] font-semibold p-1 rounded-md"
+          >
             Navbar
           </Link>
-          <Link to="/Cards" className="hover:bg-[#7A1CAC] p-2 rounded-md">
+          <Link
+            to="/Cards"
+            className="hover:bg-[#03DAC6] font-semibold p-1 rounded-md"
+          >
             Cards
           </Link>
-          <Link to="/Buttons" className="hover:bg-[#7A1CAC] p-2 rounded-md">
+          <Link
+            to="/Buttons"
+            className="hover:bg-[#03DAC6] font-semibold p-1 rounded-md"
+          >
             Buttons
           </Link>
-          <Link to="/Forms" className="hover:bg-[#7A1CAC] p-2 rounded-md">
+          <Link
+            to="/Inputs"
+            className="hover:bg-[#03DAC6] font-semibold p-1 rounded-md"
+          >
+            Inputs
+          </Link>
+          <Link
+            to="/Calendar"
+            className="hover:bg-[#03DAC6] font-semibold p-1 rounded-md"
+          >
+            Calendar
+          </Link>
+          <Link
+            to="/Carousels"
+            className="hover:bg-[#03DAC6] font-semibold p-1 rounded-md"
+          >
+            Carousels
+          </Link>
+          <Link
+            to="/Tabs"
+            className="hover:bg-[#03DAC6] font-semibold p-1 rounded-md"
+          >
+            Tabs
+          </Link>
+          <Link
+            to="/Text"
+            className="hover:bg-[#03DAC6] font-semibold p-1 rounded-md"
+          >
+            Text
+          </Link>
+          <Link
+            to="/Toggles"
+            className="hover:bg-[#03DAC6] font-semibold p-1 rounded-md"
+          >
+            Toggles
+          </Link>
+          <Link
+            to="/Footer"
+            className="hover:bg-[#03DAC6] font-semibold p-1 rounded-md"
+          >
+            Footer
+          </Link>
+          <Link
+            to="/Forms"
+            className="hover:bg-[#03DAC6] font-semibold p-1 rounded-md"
+          >
             Forms
+          </Link>
+          <Link
+            to="/CustomCursor"
+            className="hover:bg-[#03DAC6] p-1 rounded-md"
+          >
+            Custom Cursor
           </Link>
         </div>
       </div>
-
-      {/* Sidebar Toggle Button for mobile */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden bg-[#AD49E1] text-white p-2 rounded-md mb-4 fixed top-4 left-4 z-50"
-      >
-        {isOpen ? "Close Sidebar" : "Open Sidebar"}
-      </button>
     </div>
   );
 };
