@@ -5,7 +5,7 @@ import logo from "../images/logo.png";
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen top-0 bg-[#1E1E1E] text-center">
+    <div className=" flex flex-col items-center justify-center h-screen top-0 bg-[#1E1E1E] text-center">
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
@@ -32,9 +32,7 @@ const HomePage = () => {
           />
         </div>
 
-        <h1 className="text-5xl  text-[#E0E0E0] font-serif shadow-md shado mb-6">
-          AnimateReact
-        </h1>
+        <h1 className="text-5xl  text-[#E0E0E0] font-serif">AnimateReact</h1>
         <p className="text-4xl font-bold text-[#EAD196] font-roboto">
           Animated UI Components for
           <p className=" text-purple-300 my-1"></p> React & Tailwind
@@ -52,7 +50,10 @@ const HomePage = () => {
         whileHover={{ scale: 1.09 }}
         transition={{ ease: "easeInOut", duration: 0.125 }}
       >
-        <Link to="/app"> Get Started</Link>
+        <Link to="/app" target="_blank">
+          {" "}
+          Get Started
+        </Link>
       </motion.button>
     </div>
   );

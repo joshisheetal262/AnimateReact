@@ -21,11 +21,13 @@ const letterEffect = {
 const Hero = () => {
   const titleLine1 = "AnimateReact";
   const titleLine2 = "Addictive, Interactive UI Components";
-  const subtitle =
-    "Instantly Integrate Animated, Responsive UI Elements with React, Tailwind CSS, and Framer Motion—Just Copy & Paste in Two Clicks";
+  const subtitle1 =
+    "Instantly Integrate Animated, Responsive UI Elements with React, ";
+  const subtitle2 =
+    " Tailwind CSS, and Framer Motion—Just Copy & Paste in Two Clicks";
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center p-4">
+    <div className="bg-gradient-to-r from-teal-300 to-blue-500 font-sans w-full h-screen flex flex-col justify-center items-center p-4">
       <motion.div
         className="text-black text-center"
         initial="hidden"
@@ -67,7 +69,19 @@ const Hero = () => {
 
         {/* Subtitle Typing Animation */}
         <motion.h2 className="text-lg md:text-2xl text-black">
-          {Array.from(subtitle).map((letter, index) => (
+          {Array.from(subtitle1).map((letter, index) => (
+            <motion.span
+              key={index}
+              variants={letterEffect}
+              transition={{ duration: 0.05 }}
+            >
+              {letter === " " ? "\u00A0" : letter}
+            </motion.span>
+          ))}
+        </motion.h2>
+
+        <motion.h2 className="text-lg md:text-2xl text-black">
+          {Array.from(subtitle2).map((letter, index) => (
             <motion.span
               key={index}
               variants={letterEffect}

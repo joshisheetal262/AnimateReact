@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar"; // Navbar component
 import Footer from "./components/Footer"; // Footer component
 import Sidebar from "./components/Sidebar"; // Sidebar component
 import Hero from "./components/Hero"; // Hero section
+import Card from "./cards/Card";
+import CombinedButtons from "./components/CombinedButtons";
 
 function App() {
   return (
@@ -24,6 +26,28 @@ function App() {
                 <Hero />
               </div>
               <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/card"
+          element={
+            <>
+              <div className="flex flex-1">
+                <Sidebar />
+                <Card />
+              </div>
+            </>
+          }
+        />
+        <Route
+          path="/buttons"
+          element={
+            <>
+              <div className="flex flex-1">
+                <Sidebar />
+                <CombinedButtons />
+              </div>
             </>
           }
         />

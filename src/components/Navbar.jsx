@@ -1,14 +1,17 @@
 import React from "react";
 import logo from "../images/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="bg-[#1E1E1E] w-auto">
-      <div className="container mx-auto flex justify-around items-center ">
+      <div className="container mx-auto flex justify-between items-center ">
         <div className="flex items-center">
           {/* Logo */}
           <img className="h-16 w-auto" src={logo} alt="logo" />
-          <div className="text-[#FFFFFF] text-xl font-bold">AnimateReact</div>
+          <div className="text-[#FFFFFF] text-xl font-serif font-bold">
+            AnimateReact
+          </div>
         </div>
 
         {/* Search Bar */}
@@ -20,6 +23,13 @@ const Navbar = () => {
             placeholder="Search..."
           />
         </div>
+
+        <Link
+          to="/CustomCursor"
+          className="hover:text-[#03DAC6] text-white text-xl font-bold p-1 "
+        >
+          About Me
+        </Link>
       </div>
     </nav>
   );
