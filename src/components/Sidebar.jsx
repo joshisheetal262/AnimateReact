@@ -11,24 +11,22 @@ const Sidebar = () => {
           <span className="text-3xl font-bold mr-4">Components</span>
 
           <Link
-            to="/Navbar"
+            to="/navbar"
             className="hover:bg-[#03DAC6] border-2 border-transparent hover:border-black text-xl font-semibold p-1 rounded-md"
           >
             Navbar
           </Link>
-          <a
-            href="/Card"
-            target="_blank" // This will open the link in a new tab
-            rel="noopener noreferrer" // Security measure for external links
+          <Link
+            to="/cards"
             className="hover:bg-[#03DAC6] border-2 border-transparent hover:border-black text-xl font-semibold p-1 rounded-md"
           >
             Cards
-          </a>
+          </Link>
           <Link
-            to="/Buttons"
+            to="/buttons"
             className="hover:bg-[#03DAC6] border-2 border-transparent hover:border-black text-xl font-semibold p-1 rounded-md"
           >
-            Navbar
+            Buttons
           </Link>
           <Link
             to="/Inputs"
@@ -37,25 +35,25 @@ const Sidebar = () => {
             Inputs
           </Link>
           <Link
-            to="/Calendar"
+            to="/calendar"
             className="hover:bg-[#03DAC6] border-2 border-transparent hover:border-black text-xl  font-semibold p-1 rounded-md"
           >
             Calendar
           </Link>
           <Link
-            to="/Carousels"
+            to="/carousels"
             className="hover:bg-[#03DAC6] border-2 border-transparent hover:border-black text-xl  font-semibold p-1 rounded-md"
           >
             Carousels
           </Link>
           <Link
-            to="/Tabs"
+            to="/tabs"
             className="hover:bg-[#03DAC6] border-2 border-transparent hover:border-black  text-xl font-semibold p-1 rounded-md"
           >
             Tabs
           </Link>
           <Link
-            to="/Text"
+            to="/text"
             className="hover:bg-[#03DAC6] border-2 border-transparent hover:border-black text-xl  font-semibold p-1 rounded-md"
           >
             Text
@@ -73,7 +71,7 @@ const Sidebar = () => {
             Footer
           </Link>
           <Link
-            to="/Forms"
+            to="/forms"
             className="hover:bg-[#03DAC6] border-2 border-transparent hover:border-black text-xl  font-semibold p-1 rounded-md"
           >
             Forms

@@ -1,14 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const ButtonWrapper = () => {
-  return (
-    <div className="flex min-h-[200px] items-center justify-center  px-4">
-      <SpotlightButton />
-    </div>
-  );
-};
-
 const SpotlightButton = () => {
   const btnRef = useRef(null);
   const spanRef = useRef(null);
@@ -140,8 +132,11 @@ export default Example;
   };
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-6">Button Preview</h1>
+    <div className="p-4 space-y-4">
+      <h1 className="text-3xl font-bold">Button Preview</h1>
+      <p className="text-xl font-semibold py-2 px-12 bg-red-500 w-fit">
+        SpotLight
+      </p>
       <div className="bg-gray-200 flex items-center justify-center w-full h-[14rem] shadow-sm shadow-black p-6">
         <motion.button
           whileTap={{ scale: 0.985 }}
@@ -157,7 +152,7 @@ export default Example;
           />
         </motion.button>
       </div>
-      <h2 className="text-2xl font-bold static m-4">Code</h2>
+      <h2 className="text-2xl font-bold static ">Code</h2>
       <div className=" h-[20rem] overflow-scroll">
         <div className="relative bg-black text-white p-4 rounded-lg overflow-x-auto">
           <pre className="text-sm whitespace-pre-wrap">{cardCode.trim()}</pre>
@@ -173,4 +168,4 @@ export default Example;
   );
 };
 
-export default ButtonWrapper;
+export default SpotlightButton;

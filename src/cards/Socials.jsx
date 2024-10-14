@@ -63,42 +63,30 @@ export default HoverDevCards;
   };
 
   return (
-    <div className="p-6 flex flex-col space-y-8">
-      {/* Card Preview Section */}
-      <div>
-        <h1 className="text-3xl font-bold mb-6 mt-3">Card Preview</h1>
-        <div className="bg-gray-200 rounded-lg shadow-sm shadow-black p-6">
-          <div className="p-4">
-            <p className="text-xl font-semibold mb-2">Settings</p>
-            <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
-              <Card
-                title="Account"
-                subtitle="Manage profile"
-                href="#"
-                Icon={FiUser}
-              />
-              <Card
-                title="Email"
-                subtitle="Manage email"
-                href="#"
-                Icon={FiMail}
-              />
-              <Card
-                title="Team"
-                subtitle="Manage team"
-                href="#"
-                Icon={FiUsers}
-              />
-              <Card
-                title="Billing"
-                subtitle="Manage cards"
-                href="#"
-                Icon={FiCreditCard}
-              />
-            </div>
-          </div>
+    <div className="p-4 space-y-4">
+      <h1 className="text-3xl font-bold mt-5">Card Preview</h1>
+      <p className="text-xl font-semibold py-2 px-12 bg-red-500 w-fit">
+        Socials
+      </p>
+      <div className="bg-gray-200 flex items-center justify-center w-full h-[16rem] shadow-sm shadow-black p-6">
+        <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
+          <Card
+            title="Account"
+            subtitle="Manage profile"
+            href="#"
+            Icon={FiUser}
+          />
+          <Card title="Email" subtitle="Manage email" href="#" Icon={FiMail} />
+          <Card title="Team" subtitle="Manage team" href="#" Icon={FiUsers} />
+          <Card
+            title="Billing"
+            subtitle="Manage cards"
+            href="#"
+            Icon={FiCreditCard}
+          />
         </div>
       </div>
+
       {/* Card Code Section */}
       <h2 className="text-2xl font-bold static mb-4">Code</h2>
       <div className=" h-[20rem] overflow-scroll">

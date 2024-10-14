@@ -143,45 +143,45 @@ export default Example;
   };
 
   return (
-    <div className=" p-4 space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold mb-6 mt-5">Button Preview</h1>
-        <div className="bg-gray-200 flex items-center justify-center w-full h-[14rem] rounded-lg shadow-sm shadow-black p-6">
-          <motion.button
-            whileHover={{
-              scale: 1.025,
+    <div className="p-4 space-y-4">
+      <h1 className="text-3xl font-bold mb-6 mt-5">Button Preview</h1>
+      <p className="text-xl font-semibold py-2 px-12 bg-red-500 w-fit">
+        SpotLight
+      </p>
+      <div className="bg-gray-200 flex items-center justify-center w-full h-[14rem] rounded-lg shadow-sm shadow-black p-6">
+        <motion.button
+          whileHover={{
+            scale: 1.025,
+          }}
+          whileTap={{
+            scale: 0.975,
+          }}
+          onMouseEnter={scramble}
+          onMouseLeave={stopScramble}
+          className="group relative overflow-hidden rounded-lg border-[1px] border-neutral-500 bg-neutral-700 px-4 py-2 font-mono font-medium uppercase text-green-500 transition-colors hover:text-green-500"
+        >
+          <div className="relative z-10 flex items-center gap-2">
+            <FiLock />
+            <span>{text}</span>
+          </div>
+          <motion.span
+            initial={{
+              y: "100%",
             }}
-            whileTap={{
-              scale: 0.975,
+            animate={{
+              y: "-100%",
             }}
-            onMouseEnter={scramble}
-            onMouseLeave={stopScramble}
-            className="group relative overflow-hidden rounded-lg border-[1px] border-neutral-500 bg-neutral-700 px-4 py-2 font-mono font-medium uppercase text-green-500 transition-colors hover:text-green-500"
-          >
-            <div className="relative z-10 flex items-center gap-2">
-              <FiLock />
-              <span>{text}</span>
-            </div>
-            <motion.span
-              initial={{
-                y: "100%",
-              }}
-              animate={{
-                y: "-100%",
-              }}
-              transition={{
-                repeat: Infinity,
-                repeatType: "mirror",
-                duration: 1,
-                ease: "linear",
-              }}
-              className="duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-green-600/0 from-40% via-green-600/100 to-green-600/0 to-60% opacity-0 transition-opacity group-hover:opacity-100"
-            />
-          </motion.button>
-        </div>
+            transition={{
+              repeat: Infinity,
+              repeatType: "mirror",
+              duration: 1,
+              ease: "linear",
+            }}
+            className="duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-green-600/0 from-40% via-green-600/100 to-green-600/0 to-60% opacity-0 transition-opacity group-hover:opacity-100"
+          />
+        </motion.button>
       </div>
-
-      <h2 className="text-2xl font-bold static mb-4">Code</h2>
+      <h2 className="text-2xl font-bold static">Code</h2>
       <div className=" h-[20rem] overflow-scroll">
         <div className="relative bg-black text-white p-4 rounded-lg overflow-x-auto">
           <pre className="text-sm whitespace-pre-wrap">{cardCode.trim()}</pre>

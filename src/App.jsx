@@ -5,8 +5,12 @@ import Navbar from "./components/Navbar"; // Navbar component
 import Footer from "./components/Footer"; // Footer component
 import Sidebar from "./components/Sidebar"; // Sidebar component
 import Hero from "./components/Hero"; // Hero section
-import Card from "./cards/Card";
 import CombinedButtons from "./components/CombinedButtons";
+import CombinedText from "./components/CombinedText";
+import CombinedCards from "./components/CombinedCards";
+import CombinedForms from "./components/CombinedForms";
+import CombinedNavbar from "./components/CombinedNavbar";
+import CombinedCarousel from "./components/CombinedCarousel";
 
 function App() {
   return (
@@ -29,17 +33,19 @@ function App() {
             </>
           }
         />
+        {/* CARD ROUTE  */}
         <Route
-          path="/card"
+          path="/cards"
           element={
             <>
               <div className="flex flex-1">
                 <Sidebar />
-                <Card />
+                <CombinedCards />
               </div>
             </>
           }
         />
+        {/* BUTTON ROUTE  */}
         <Route
           path="/buttons"
           element={
@@ -47,6 +53,54 @@ function App() {
               <div className="flex flex-1">
                 <Sidebar />
                 <CombinedButtons />
+              </div>
+            </>
+          }
+        />
+        {/* TEXT ROUTE  */}
+        <Route
+          path="/text"
+          element={
+            <>
+              <div className="flex flex-1">
+                <Sidebar />
+                <CombinedText />
+              </div>
+            </>
+          }
+        />
+        {/* FORM ROUTE  */}
+        <Route
+          path="/forms"
+          element={
+            <>
+              <div className="flex flex-1">
+                <Sidebar />
+                <CombinedForms />
+              </div>
+            </>
+          }
+        />
+        {/* NAVBAR ROUTE  */}
+        <Route
+          path="/navbar"
+          element={
+            <>
+              <div className="flex flex-1">
+                <Sidebar />
+                <CombinedNavbar />
+              </div>
+            </>
+          }
+        />
+        {/* CAROUSEL ROUTE  */}
+        <Route
+          path="/carousels"
+          element={
+            <>
+              <div className="flex flex-1">
+                <Sidebar />
+                <CombinedCarousel />
               </div>
             </>
           }
