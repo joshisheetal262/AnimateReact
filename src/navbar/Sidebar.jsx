@@ -34,14 +34,15 @@ const Sidebar = () => {
   return (
     <motion.nav
       layout
-      className="sticky top-0 h-[70vh] shrink-0 border-r border-b border-slate-300 bg-white p-2"
+      className="sticky top-0 h-screen shrink-0 border-r border-slate-300 bg-white p-2"
       style={{
         width: open ? "225px" : "fit-content",
       }}
     >
       {/* Title Section */}
       <div className="mb-3 border-b border-slate-300 pb-3">
-        <div className="flex cursor-pointer items-center justify-between rounded-md transition-colors hover:bg-slate-100">
+        <div className="flex cursor-pointer items-center justify-between rounded-md 
+        transition-colors hover:bg-slate-100">
           <div className="flex items-center gap-2">
             {/* Logo */}
             <motion.div
@@ -100,7 +101,8 @@ const Sidebar = () => {
             layout
             key={title}
             onClick={() => setSelected(title)}
-            className={\`relative flex h-10 w-full items-center rounded-md transition-colors \${selected === title
+            className={\`relative flex h-10 w-full items-center rounded-md 
+            transition-colors \${selected === title
               ? "bg-indigo-100 text-indigo-800"
               : "text-slate-500 hover:bg-slate-100"}\`}
           >
@@ -140,7 +142,8 @@ const Sidebar = () => {
       <motion.button
         layout
         onClick={() => setOpen((pv) => !pv)}
-        className="absolute bottom-0 left-0 right-0 border-t border-slate-300 transition-colors hover:bg-slate-100"
+        className="absolute bottom-0 left-0 right-0 border-t border-slate-300 
+        transition-colors hover:bg-slate-100"
         aria-expanded={open}
       >
         <div className="flex items-center p-2">
@@ -184,15 +187,15 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="p-4 pr-0 space-y-4">
-      <h1 className="text-3xl font-bold mt-5">Card Preview</h1>
+    <div className="p-4 space-y-4 lg:w-full md:w-fit sm:w-fit">
+      <h1 className="text-3xl font-bold mt-5">Navbar Preview</h1>
       <p className="text-xl font-semibold py-2 px-12 bg-red-500 w-fit">
-        Slide Navbar
+        Side Navbar
       </p>
-      <div className="bg-slate-300 w-[78rem] shadow-sm shadow-black p-6">
+      <div className="bg-slate-300 shadow-sm shadow-black p-6">
         <motion.nav
           layout
-          className="sticky top-0 h-[70vh] shrink-0 border-r border-b border-slate-300 bg-white p-2"
+          className="sticky top-0 h-screen shrink-0 border-r border-slate-300 bg-white p-2"
           style={{
             width: open ? "225px" : "fit-content",
           }}
@@ -204,7 +207,7 @@ const Sidebar = () => {
                 {/* Logo */}
                 <motion.div
                   layout
-                  className="grid size-10  shrink-0 place-content-center rounded-md bg-indigo-600"
+                  className="grid size-10 shrink-0 place-content-center rounded-md bg-indigo-600"
                 >
                   <svg
                     width="24"
@@ -244,7 +247,7 @@ const Sidebar = () => {
           </div>
 
           {/* Options */}
-          <div className="space-y-1 ">
+          <div className="space-y-1 mb-1">
             {[
               { Icon: FiHome, title: "Dashboard", notifs: 0 },
               { Icon: FiDollarSign, title: "Sales", notifs: 3 },
@@ -303,7 +306,7 @@ const Sidebar = () => {
             className="absolute bottom-0 left-0 right-0 border-t border-slate-300 transition-colors hover:bg-slate-100"
             aria-expanded={open}
           >
-            <div className="flex items-center p-2">
+            <div className="flex items-center p-1">
               <motion.div
                 layout
                 className="grid  size-10 place-content-center text-lg"
@@ -329,16 +332,16 @@ const Sidebar = () => {
       </div>
       {/* Card Code Section */}
       <h2 className="text-2xl font-bold static mb-4">Code</h2>
-      <div className=" h-[20rem] overflow-scroll">
-        <div className="relative bg-black text-white p-4 rounded-lg overflow-x-auto">
+      <div className="relative">
+        <div className="h-[20rem] overflow-scroll bg-black text-white p-4 rounded-lg">
           <pre className="text-sm whitespace-pre-wrap">{cardCode.trim()}</pre>
-          <button
-            onClick={copyToClipboard}
-            className="absolute top-2 right-2 bg-blue-500 text-white py-1 px-3 rounded-md text-sm"
-          >
-            {isCopied ? "Copied!" : "Copy"}
-          </button>
         </div>
+        <button
+          onClick={copyToClipboard}
+          className="absolute top-3 right-4 bg-blue-500 text-white py-1 px-5 rounded-md text-sm mr-2"
+        >
+          {isCopied ? "Copied!" : "Copy"}
+        </button>
       </div>
     </div>
   );

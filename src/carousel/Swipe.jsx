@@ -49,7 +49,7 @@ const SwipeCarousel = () => {
   };
 
   return (
-    <div className="relative w-[70rem] overflow-hidden bg-neutral-950 pb-2 px-0 ">
+    <div className="relative w-full  bg-neutral-950 pb-2 px-0 ">
       <motion.div
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
@@ -69,7 +69,7 @@ const SwipeCarousel = () => {
             }}
             animate={{ scale: imgIndex === idx ? 0.95 : 0.85 }}
             transition={SPRING_OPTIONS}
-            className="aspect-video w-[70rem] h-[30rem] shrink-0 object-cover"
+            className="aspect-video w-full h-[35rem] shrink-0 object-cover"
           />
         ))}
       </motion.div>
@@ -79,13 +79,16 @@ const SwipeCarousel = () => {
           <button
             key={idx}
             onClick={() => setImgIndex(idx)}
-            className={\`h-3 w-3 rounded-full transition-colors \${idx === imgIndex ? "bg-neutral-50" : "bg-neutral-500"}\`}
+            className={\`h-3 w-3 rounded-full transition-colors \${ idx === imgIndex ? "bg-neutral-50" : "bg-neutral-500" }\`}
           />
         ))}
       </div>
     </div>
   );
 };
+
+export default SwipeCarousel;
+
 
 export default SwipeCarousel;
 `;
@@ -109,14 +112,16 @@ const SPRING_OPTIONS = {
   stiffness: 400,
   damping: 50,
 };
-// Function to copy code to clipboard
-const copyToClipboard = () => {
-  navigator.clipboard.writeText(cardCode.trim());
-  setIsCopied(true);
-  setTimeout(() => setIsCopied(false), 2000); // Reset after 2 seconds
-};
+
 const SwipeCarousel = () => {
   const [isCopied, setIsCopied] = useState(false);
+
+  // Function to copy code to clipboard
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(cardCode.trim());
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000); // Reset after 2 seconds
+  };
 
   const [imgIndex, setImgIndex] = useState(0);
   const dragX = useMotionValue(0);
@@ -146,7 +151,7 @@ const SwipeCarousel = () => {
       <p className="text-xl font-semibold py-2 px-12 bg-red-500 w-fit">
         Swipe Carousel
       </p>
-      <div className="relative flex items-center justify-center h-[30rem] overflow-hidden pb-6 bg-neutral-950">
+      <div className="relative flex items-center justify-center h-[30rem] w-[68rem] overflow-hidden pb-6 bg-neutral-950">
         <div className="w-[69rem]">
           <motion.div
             drag="x"
@@ -188,16 +193,16 @@ const SwipeCarousel = () => {
 
       {/* Card Code Section */}
       <h2 className="text-2xl font-bold static mb-4">Code</h2>
-      <div className=" h-[20rem] overflow-scroll">
-        <div className="relative bg-black text-white p-4 rounded-lg overflow-x-auto">
+      <div className="relative">
+        <div className="h-[20rem] overflow-scroll bg-black text-white p-4 rounded-lg">
           <pre className="text-sm whitespace-pre-wrap">{cardCode.trim()}</pre>
-          <button
-            onClick={copyToClipboard}
-            className="absolute top-2 right-2 bg-blue-500 text-white py-1 px-3 rounded-md text-sm"
-          >
-            {isCopied ? "Copied!" : "Copy"}
-          </button>
         </div>
+        <button
+          onClick={copyToClipboard}
+          className="absolute top-3 right-4 bg-blue-500 text-white py-1 px-5 rounded-md text-sm mr-2"
+        >
+          {isCopied ? "Copied!" : "Copy"}
+        </button>
       </div>
     </div>
   );

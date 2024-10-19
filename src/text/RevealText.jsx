@@ -2,10 +2,8 @@ import { useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion"; // Direct import from Framer Motion
 
-const Revealtext = () => {
-  const [isCopied, setIsCopied] = useState(false);
-
-  const textCode = `import { useAnimation, useInView } from 'framer-motion';
+const cardCode = `
+import { useAnimation, useInView } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion'; // Direct import from Framer Motion
 
@@ -91,6 +89,9 @@ function HeroRevealAnimation({ children, width = 'fit-content' }) {
 }
 `;
 
+const Revealtext = () => {
+  const [isCopied, setIsCopied] = useState(false);
+
   // Function to copy code to clipboard
   const copyToClipboard = () => {
     navigator.clipboard.writeText(cardCode.trim());
@@ -99,9 +100,12 @@ function HeroRevealAnimation({ children, width = 'fit-content' }) {
   };
 
   return (
-    <div className="p-6 flex flex-col space-y-8">
-      <h1 className="text-3xl font-bold mt-3">Card Preview</h1>
-      <div className="bg-gray-200 rounded-lg shadow-sm shadow-black p-6">
+    <div className="p-6 flex flex-col space-y-4">
+      <h1 className="text-3xl font-bold mt-3">Text Preview</h1>
+      <p className="text-xl font-semibold py-2 px-12 bg-red-500 w-fit">
+        Reveal Text
+      </p>
+      <div className="bg-gray-200 rounded-lg shadow-sm w-[66rem] shadow-black p-6">
         <div className="w-full p-8 bg-white px-6 md:px-12 relative">
           <div className="h-full flex items-center justify-center flex-col md:flex-row text-center md:text-left relative z-10">
             <div className="text-black">
@@ -134,16 +138,16 @@ function HeroRevealAnimation({ children, width = 'fit-content' }) {
       </div>
       {/* Card Code Section */}
       <h2 className="text-2xl font-bold static mb-4">Code</h2>
-      <div className=" h-[20rem] overflow-scroll">
-        <div className="relative bg-black text-white p-4 rounded-lg overflow-x-auto">
-          <pre className="text-sm whitespace-pre-wrap">{textCode.trim()}</pre>
-          <button
-            onClick={copyToClipboard}
-            className="absolute top-2 right-2 bg-blue-500 text-white py-1 px-3 rounded-md text-sm"
-          >
-            {isCopied ? "Copied!" : "Copy"}
-          </button>
+      <div className="relative">
+        <div className="h-[20rem] overflow-scroll bg-black text-white p-4 rounded-lg">
+          <pre className="text-sm whitespace-pre-wrap">{cardCode.trim()}</pre>
         </div>
+        <button
+          onClick={copyToClipboard}
+          className="absolute top-3 right-4 bg-blue-500 text-white py-1 px-5 rounded-md text-sm mr-2"
+        >
+          {isCopied ? "Copied!" : "Copy"}
+        </button>
       </div>
     </div>
   );

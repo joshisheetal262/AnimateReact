@@ -33,7 +33,7 @@ const BubbleText = () => {
 
   return (
     <div className="p-4 space-y-4">
-      <h1 className="text-3xl font-bold mt-5">Card Preview</h1>
+      <h1 className="text-3xl font-bold ">Text Preview</h1>
       <p className="text-xl font-semibold py-2 px-12 bg-red-500 w-fit">
         Bubble Text
       </p>
@@ -52,16 +52,16 @@ const BubbleText = () => {
       </div>
       {/* Card Code Section */}
       <h2 className="text-2xl font-bold static mb-4">Code</h2>
-      <div className="h-[20rem] overflow-scroll">
-        <div className="relative bg-black text-white p-4 rounded-lg overflow-x-auto">
+      <div className="relative">
+        <div className="h-[20rem] overflow-scroll bg-black text-white p-4 rounded-lg">
           <pre className="text-sm whitespace-pre-wrap">{cardCode.trim()}</pre>
-          <button
-            onClick={copyToClipboard}
-            className="absolute top-2 right-2 bg-blue-500 text-white py-1 px-3 rounded-md text-sm"
-          >
-            {isCopied ? "Copied!" : "Copy"}
-          </button>
         </div>
+        <button
+          onClick={copyToClipboard}
+          className="absolute top-3 right-4 bg-blue-500 text-white py-1 px-5 rounded-md text-sm mr-2"
+        >
+          {isCopied ? "Copied!" : "Copy"}
+        </button>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import OutlineButton from "../Buttons/OutlineButton";
 import Click from "../Buttons/Click";
 import ToggleButton from "../Buttons/ToggleButton";
 import ClipButton from "../Buttons/ClipButton";
+import MorphismButton from "../Buttons/MorphismButton";
 
 const CombinedButtons = () => {
   return (
@@ -15,6 +16,7 @@ const CombinedButtons = () => {
       <Click />
       <ToggleButton />
       <ClipButton />
+      <MorphismButton />
     </div>
   );
 };

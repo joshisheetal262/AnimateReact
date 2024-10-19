@@ -27,8 +27,6 @@ const PopUpCard = () => {
   const cardCode = `
 import React from "react";
 import { motion } from "framer-motion";
-import cosmetic from "../images/cosmetic.png";
-import cosmeticBg from "../images/cosmeticBg.jpg";
 
 const PopupCard = ({ title, coverImage, characterImage, link }) => {
   return (
@@ -64,33 +62,35 @@ const PopupCard = ({ title, coverImage, characterImage, link }) => {
           className="absolute w-full h-full opacity-0 transition-opacity duration-500"
           alt="Character"
           initial={{ opacity: 0, translateY: "0%" }}
-          whileHover={{ opacity: 1, translateY: "-30%" }}
+          whileHover={{ opacity: 1, translateY: "-20%" }}
         />
       </motion.div>
     </a>
   );
 };
 
-const cards = () => {
+const Cards = () => {
   return (
     <div className="flex justify-center items-center bg-[#191c2965] h-[30rem]">
-      <Card
+      <PopupCard
         title="Contains all the nutrition"
         link="#"
-        coverImage={cosmeticBg}
-        characterImage={cosmetic}
+        coverImage="https://img.freepik.com/free-photo/digital-art-flower-landscape-painting_23-2151596841.jpg?t=st=1729283352~exp=1729286952~hmac=204f77f1a20cc8498d7982b4e5a5dfa624dc68a2ebe0c7079df1194c8a0c4fb7&w=360"
+        image
+        characterImage="https://as1.ftcdn.net/v2/jpg/05/93/97/78/1000_F_593977871_SCCJWIfyzEv5QsACMRQJZmKJ83bPV0AT.webp"
       />
-      <Card
+      <PopupCard
         title="Long lasting and smooth"
         link="#"
-        coverImage="https://as2.ftcdn.net/v2/jpg/01/37/50/39/1000_F_137503986_MplaPP9hN4DDL2COEXVyGXmv3WDe2JmF.jpg"
-        characterImage="https://as2.ftcdn.net/v2/jpg/08/67/83/77/1000_F_867837775_2Jp4EvQbukIj2KJYDbHIfLDkh5bx6zVY.webp"
+        coverImage="https://as2.ftcdn.net/v2/jpg/01/37/50/39/1000_F_137503986_MplaPP9hN4DDL2COEXVyGXmv3WDe2JmF.jpg" // Example online cover image
+        characterImage="https://as2.ftcdn.net/v2/jpg/08/67/83/77/1000_F_867837775_2Jp4EvQbukIj2KJYDbHIfLDkh5bx6zVY.webp" // Example online character image
       />
     </div>
   );
 };
 
-export default PopupCard;
+export default Cards;
+
   `;
 
   const copyToClipboard = () => {
@@ -144,23 +144,24 @@ export default PopupCard;
                 className="absolute w-full h-full opacity-0 transition-opacity duration-500"
                 alt="Character"
                 initial={{ opacity: 0, translateY: "0%" }}
-                whileHover={{ opacity: 1, translateY: "-30%" }}
+                whileHover={{ opacity: 1, translateY: "-20%" }}
               />
             </motion.div>
           </a>
         ))}
       </div>
+      {/* Card Code Section */}
       <h2 className="text-2xl font-bold static mb-4">Code</h2>
-      <div className="h-[20rem] overflow-scroll">
-        <div className="relative bg-black text-white p-4 rounded-lg overflow-x-auto">
+      <div className="relative">
+        <div className="h-[20rem] overflow-scroll bg-black text-white p-4 rounded-lg">
           <pre className="text-sm whitespace-pre-wrap">{cardCode.trim()}</pre>
-          <button
-            onClick={copyToClipboard}
-            className="absolute top-2 right-2 bg-blue-500 text-white py-1 px-3 rounded-md text-sm"
-          >
-            {isCopied ? "Copied!" : "Copy"}
-          </button>
         </div>
+        <button
+          onClick={copyToClipboard}
+          className="absolute top-3 right-4 bg-blue-500 text-white py-1 px-5 rounded-md text-sm mr-2"
+        >
+          {isCopied ? "Copied!" : "Copy"}
+        </button>
       </div>
     </div>
   );

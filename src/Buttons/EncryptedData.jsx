@@ -108,7 +108,7 @@ const EncryptButton = () => {
       }}
       onMouseEnter={scramble}
       onMouseLeave={stopScramble}
-      className="group relative overflow-hidden rounded-lg border-[1px] border-neutral-500 bg-neutral-700 px-4 py-2 font-mono font-medium uppercase text-neutral-300 transition-colors hover:text-indigo-300"
+      className="roup relative overflow-hidden rounded-lg border-[1px] border-neutral-500 bg-neutral-700 px-4 py-2 font-mono font-medium uppercase text-green-500 transition-colors hover:text-green-500"
     >
       <div className="relative z-10 flex items-center gap-2">
         <FiLock />
@@ -146,7 +146,7 @@ export default Example;
     <div className="p-4 space-y-4">
       <h1 className="text-3xl font-bold mb-6 mt-5">Button Preview</h1>
       <p className="text-xl font-semibold py-2 px-12 bg-red-500 w-fit">
-        SpotLight
+        Ecrypted Data Button
       </p>
       <div className="bg-gray-200 flex items-center justify-center w-full h-[14rem] rounded-lg shadow-sm shadow-black p-6">
         <motion.button
@@ -181,17 +181,18 @@ export default Example;
           />
         </motion.button>
       </div>
-      <h2 className="text-2xl font-bold static">Code</h2>
-      <div className=" h-[20rem] overflow-scroll">
-        <div className="relative bg-black text-white p-4 rounded-lg overflow-x-auto">
+      {/* Card Code Section */}
+      <h2 className="text-2xl font-bold static mb-4">Code</h2>
+      <div className="relative">
+        <div className="h-[20rem] overflow-scroll bg-black text-white p-4 rounded-lg">
           <pre className="text-sm whitespace-pre-wrap">{cardCode.trim()}</pre>
-          <button
-            onClick={copyToClipboard}
-            className="absolute top-2 right-2 bg-blue-500 text-white py-1 px-3 rounded-md text-sm"
-          >
-            {isCopied ? "Copied!" : "Copy"}
-          </button>
         </div>
+        <button
+          onClick={copyToClipboard}
+          className="absolute top-3 right-4 bg-blue-500 text-white py-1 px-5 rounded-md text-sm mr-2"
+        >
+          {isCopied ? "Copied!" : "Copy"}
+        </button>
       </div>
     </div>
   );

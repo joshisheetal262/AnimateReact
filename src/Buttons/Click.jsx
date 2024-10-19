@@ -17,6 +17,7 @@ export default NeuButton;
 const NeuButton = () => {
   const [isCopied, setIsCopied] = useState(false);
 
+  //Function to copy code
   const copyToClipboard = () => {
     navigator.clipboard.writeText(cardCode.trim());
     setIsCopied(true);
@@ -35,17 +36,18 @@ const NeuButton = () => {
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold static mb-4 mt-4">Code</h2>
-      <div className="h-[20rem] overflow-scroll">
-        <div className="relative bg-black text-white p-4 rounded-lg overflow-x-auto">
+      {/* Card Code Section */}
+      <h2 className="text-2xl font-bold static mb-4">Code</h2>
+      <div className="relative">
+        <div className="h-[20rem] overflow-scroll bg-black text-white p-4 rounded-lg">
           <pre className="text-sm whitespace-pre-wrap">{cardCode.trim()}</pre>
-          <button
-            onClick={copyToClipboard}
-            className="absolute top-2 right-2 bg-blue-500 text-white py-1 px-3 rounded-md text-sm"
-          >
-            {isCopied ? "Copied!" : "Copy"}
-          </button>
         </div>
+        <button
+          onClick={copyToClipboard}
+          className="absolute top-3 right-4 bg-blue-500 text-white py-1 px-5 rounded-md text-sm mr-2"
+        >
+          {isCopied ? "Copied!" : "Copy"}
+        </button>
       </div>
     </div>
   );

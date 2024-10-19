@@ -94,21 +94,24 @@ const Tabs = () => {
         <div className="grid grid-cols-3 gap-4 divide-x divide-neutral-700">
           <a
             href="#"
-            className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
+            className="flex w-full flex-col items-center justify-center py-2
+             text-neutral-400 transition-colors hover:text-neutral-50"
           >
             <FiHome className="mb-2 text-xl text-indigo-300" />
             <span className="text-xs">Startup</span>
           </a>
           <a
             href="#"
-            className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
+            className="flex w-full flex-col items-center justify-center py-2
+             text-neutral-400 transition-colors hover:text-neutral-50"
           >
             <FiBarChart2 className="mb-2 text-xl text-indigo-300" />
             <span className="text-xs">Scaleup</span>
           </a>
           <a
             href="#"
-            className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
+            className="flex w-full flex-col items-center justify-center py-2
+             text-neutral-400 transition-colors hover:text-neutral-50"
           >
             <FiPieChart className="mb-2 text-xl text-indigo-300" />
             <span className="text-xs">Enterprise</span>
@@ -368,7 +371,7 @@ const Tabs = () => {
               </p>
             </a>
           </div>
-          <button className="ml-auto mt-4 flex items-center gap-1 text-sm text-indigo-300">
+          <button className="ml-auto mt-4 flex items-center justify-center gap-1 text-sm text-indigo-300">
             <span>View more</span>
             <FiArrowRight />
           </button>
@@ -432,12 +435,12 @@ const Tabs = () => {
   );
 
   return (
-    <div className="p-4 space-y-4">
-      <h1 className="text-3xl font-bold mt-5">Card Preview</h1>
+    <div className="p-4 space-y-4 lg:w-full md:w-fit sm:w-fit">
+      <h1 className="text-3xl font-bold">Navbar Preview</h1>
       <p className="text-xl font-semibold py-2 px-12 bg-red-500 w-fit">
         Tab Shifting
       </p>
-      <div className="bg-black flex  justify-center w-full h-[30rem] shadow-sm shadow-black p-6">
+      <div className="bg-black flex justify-center w-[68rem] h-[30rem] shadow-sm shadow-black p-6">
         <div
           onMouseLeave={() => handleSetSelected(null)}
           className="relative flex h-fit gap-2"
@@ -460,16 +463,16 @@ const Tabs = () => {
       </div>
       {/* Card Code Section */}
       <h2 className="text-2xl font-bold static mb-4">Code</h2>
-      <div className=" h-[20rem] overflow-scroll">
-        <div className="relative bg-black text-white p-4 rounded-lg overflow-x-auto">
+      <div className="relative">
+        <div className="h-[20rem] overflow-scroll bg-black text-white p-4 rounded-lg">
           <pre className="text-sm whitespace-pre-wrap">{cardCode.trim()}</pre>
-          <button
-            onClick={copyToClipboard}
-            className="absolute top-2 right-2 bg-blue-500 text-white py-1 px-3 rounded-md text-sm"
-          >
-            {isCopied ? "Copied!" : "Copy"}
-          </button>
         </div>
+        <button
+          onClick={copyToClipboard}
+          className="absolute top-3 right-4 bg-blue-500 text-white py-1 px-5 rounded-md text-sm mr-2"
+        >
+          {isCopied ? "Copied!" : "Copy"}
+        </button>
       </div>
     </div>
   );

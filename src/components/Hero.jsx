@@ -7,12 +7,11 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.05, // Delay between each letter
+      staggerChildren: 0.05,
     },
   },
 };
 
-// Typing animation for individual letters
 const letterEffect = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
@@ -34,59 +33,39 @@ const Hero = () => {
         animate="visible"
         variants={containerVariants}
         transition={{
-          repeat: Infinity, // Infinite repeat
-          repeatType: "loop", // Restart the animation from the beginning
-          delayChildren: 3, // Delay before the typing restarts
-          Delay: 1,
-          ease: "linear", // Delay between loops
+          repeat: Infinity,
+          repeatType: "loop",
+          delayChildren: 3,
+          ease: "linear",
         }}
       >
-        {/* First Line of Title (AnimateReact) */}
-        <motion.h1 className="text-4xl md:text-6xl font-bold mb-4">
+        <motion.h1 className="text-3xl md:text-5xl font-bold mb-2">
           {Array.from(titleLine1).map((letter, index) => (
-            <motion.span
-              key={index}
-              variants={letterEffect}
-              transition={{ duration: 0.05 }}
-            >
+            <motion.span key={index} variants={letterEffect}>
               {letter === " " ? "\u00A0" : letter}
             </motion.span>
           ))}
         </motion.h1>
 
-        {/* Line Break and Second Line of Title */}
-        <motion.h1 className="text-4xl md:text-6xl font-bold mb-4">
+        <motion.h1 className="text-2xl md:text-4xl font-bold mb-2">
           {Array.from(titleLine2).map((letter, index) => (
-            <motion.span
-              key={index}
-              variants={letterEffect}
-              transition={{ duration: 0.05 }}
-            >
+            <motion.span key={index} variants={letterEffect}>
               {letter === " " ? "\u00A0" : letter}
             </motion.span>
           ))}
         </motion.h1>
 
-        {/* Subtitle Typing Animation */}
-        <motion.h2 className="text-lg md:text-2xl text-black">
+        <motion.h2 className="text-sm md:text-lg text-black mb-2">
           {Array.from(subtitle1).map((letter, index) => (
-            <motion.span
-              key={index}
-              variants={letterEffect}
-              transition={{ duration: 0.05 }}
-            >
+            <motion.span key={index} variants={letterEffect}>
               {letter === " " ? "\u00A0" : letter}
             </motion.span>
           ))}
         </motion.h2>
 
-        <motion.h2 className="text-lg md:text-2xl text-black">
+        <motion.h2 className="text-sm md:text-lg text-black">
           {Array.from(subtitle2).map((letter, index) => (
-            <motion.span
-              key={index}
-              variants={letterEffect}
-              transition={{ duration: 0.05 }}
-            >
+            <motion.span key={index} variants={letterEffect}>
               {letter === " " ? "\u00A0" : letter}
             </motion.span>
           ))}
