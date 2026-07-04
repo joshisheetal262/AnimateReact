@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Routes,
   useLocation,
@@ -42,7 +42,7 @@ function Layout({ children }) {
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <Layout>
         <Routes>
           {/* Route for the home page */}
@@ -148,7 +148,7 @@ function App() {
           />
         </Routes>
       </Layout>
-    </Router>
+    </HashRouter>
   );
 }
 
