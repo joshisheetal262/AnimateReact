@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom"; // Use NavLink instead of Link
+import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi"; // Icons for menu
 
 const Sidebar = () => {
@@ -19,11 +19,11 @@ const Sidebar = () => {
 
       {/* Sidebar container */}
       <div
-        className={`sticky top-0 h-screen bg-white text-[#272727] w-[12rem] md:w-[14rem] lg:w-[15rem] border-r-2 border-black p-6 pt-8 no-scrollbar overflow-y-auto transition-transform transform ${
+        className={`sticky top-0 h-screen  bg-white text-[#272727] w-[12rem] md:w-[14rem] lg:w-[15rem] border-r-2 border-black p-6 pt-8 no-scrollbar overflow-y-auto transition-transform transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0`} // Sidebar slides in/out on small devices
       >
-        <div className="flex flex-col space-y-4 mb-6">
+        <div className="flex flex-col space-y-8">
           <span className="text-2xl md:text-3xl font-bold">Components</span>
 
           {/* Links */}
@@ -35,25 +35,19 @@ const Sidebar = () => {
             "Footer",
             "Carousels",
             "Toggles",
-            "Forms",
-            "Calendar",
-            "Inputs",
-            "Tabs",
-            "CustomCursor",
+            // "Tabs",
+            // "Forms",
+            // "Calendar",
+            // "Inputs",
+            // "CustomCursor",
           ].map((item, index) => (
-            <NavLink
+            <Link
               to={`/${item.toLowerCase()}`}
               key={index}
-              className={({ isActive }) =>
-                `hover:bg-teal-300 border-2 border-transparent hover:border-black text-lg md:text-xl font-semibold p-1 rounded-md ${
-                  isActive
-                    ? "bg-teal-200 text-slate-900 border-black border-spacing-1 border-2"
-                    : ""
-                }`
-              }
+              className="hover:bg-[#03DAC6] border-2 border-transparent hover:border-black text-lg md:text-xl font-semibold p-1 rounded-md"
             >
               {item}
-            </NavLink>
+            </Link>
           ))}
         </div>
       </div>

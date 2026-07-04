@@ -4,17 +4,10 @@ import { UilAt, UilLockAlt, UilUser } from "@iconscout/react-unicons"; // Exampl
 
 const AuthCard = () => {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-900">
-      {/* Login/Signup Card */}
-      {/* <div className="w-full max-w-xl md:max-w-lg lg:max-w-2xl">
-        <div className="relative">
-          <input className="" type="checkbox" id="reg-log" name="reg-log" />
-          <label htmlFor="reg-log">dsdsd</label> */}
-
+    <div className="mt-8 w-full flex items-center justify-center bg-gray-900">
       <div className="relative w-full h-full">
         <motion.div className="relative">
           <div className="bg-gray-800 p-10 rounded-lg shadow-lg">
-            {/* Toggle between Log In and Sign Up */}
             <h6 className="text-white text-lg font-bold mb-4">
               <span className="cursor-pointer">Log In</span> |{" "}
               <span className="cursor-pointer">Sign Up</span>

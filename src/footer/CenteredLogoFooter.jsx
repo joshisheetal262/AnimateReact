@@ -115,16 +115,18 @@ const Categories = [
 export default CenterLogoFooter;
 
 `;
-// Function to copy code to clipboard
+
+
+// Main Footer Component
+const CenterLogoFooter = () => {
+  const [isCopied, setIsCopied] = useState(false);
+
+  // Function to copy code to clipboard
 const copyToClipboard = () => {
   navigator.clipboard.writeText(cardCode.trim());
   setIsCopied(true);
   setTimeout(() => setIsCopied(false), 2000); // Reset after 2 seconds
 };
-
-// Main Footer Component
-const CenterLogoFooter = () => {
-  const [isCopied, setIsCopied] = useState(false);
   return (
     <div className="p-4 space-y-4">
       <h1 className="text-3xl font-bold">Footer Preview</h1>

@@ -26,7 +26,7 @@ const Hero = () => {
     " Tailwind CSS, and Framer Motion—Just Copy & Paste in Two Clicks";
 
   return (
-    <div className="bg-gradient-to-r from-teal-300 to-blue-500 font-sans w-full h-screen flex flex-col justify-center items-center p-4">
+    <div className="bg-gradient-to-r from-teal-300 to-blue-500 font-sans w-full h-screen flex flex-col justify-center items-center p-4 sm:p-6 lg:p-8">
       <motion.div
         className="text-black text-center"
         initial="hidden"
@@ -39,7 +39,7 @@ const Hero = () => {
           ease: "linear",
         }}
       >
-        <motion.h1 className="text-3xl md:text-5xl font-bold mb-2">
+        <motion.h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
           {Array.from(titleLine1).map((letter, index) => (
             <motion.span key={index} variants={letterEffect}>
               {letter === " " ? "\u00A0" : letter}
@@ -47,7 +47,7 @@ const Hero = () => {
           ))}
         </motion.h1>
 
-        <motion.h1 className="text-2xl md:text-4xl font-bold mb-2">
+        <motion.h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
           {Array.from(titleLine2).map((letter, index) => (
             <motion.span key={index} variants={letterEffect}>
               {letter === " " ? "\u00A0" : letter}
@@ -55,7 +55,7 @@ const Hero = () => {
           ))}
         </motion.h1>
 
-        <motion.h2 className="text-sm md:text-lg text-black mb-2">
+        <motion.h2 className="text-xs sm:text-sm md:text-lg lg:text-xl text-black mb-2">
           {Array.from(subtitle1).map((letter, index) => (
             <motion.span key={index} variants={letterEffect}>
               {letter === " " ? "\u00A0" : letter}
@@ -63,7 +63,7 @@ const Hero = () => {
           ))}
         </motion.h2>
 
-        <motion.h2 className="text-sm md:text-lg text-black">
+        <motion.h2 className="text-xs sm:text-sm md:text-lg lg:text-xl text-black">
           {Array.from(subtitle2).map((letter, index) => (
             <motion.span key={index} variants={letterEffect}>
               {letter === " " ? "\u00A0" : letter}
